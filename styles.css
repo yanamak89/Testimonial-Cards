@@ -1,0 +1,285 @@
+/* styles.css: токени + сітка + картки + хвостик */
+:root {
+    --radius:24px; --radius-lg:32px;
+    --surface:#fff; --surface-dark:#0f172a;
+    --text:#56585c; --text-muted:#7890b1;
+    --outline:#0f172a20; --shadow:0 10px 30px rgb(2 6 23 / 6%);
+    --gap:clamp(16px,2.5vw,28px);
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: Inter, system-ui, sans-serif;
+    color: var(--text);
+}
+
+.page { 
+    padding: clamp(16px, 4vw, 40px);
+}
+
+.grid {
+    display: grid;
+    gap: var(--gap);
+    grid-template-columns: repeat(12, 1fr);
+}
+
+.card {
+    grid-column: span 12;
+    background: var(--surface);
+    border-radius: var(--radius-lg);
+    padding: clamp(20px, 3vw, 36px);
+    box-shadow: var(--shadow);
+}
+
+.card--outlined {
+    background: #fff;
+    border: 2px solid #01010126;
+    border-radius: 36px;
+    padding: clamp(30px, 3vw, 40px);
+}
+
+.card--outlined .person {
+    margin-top: 28px;
+}
+
+.card--outlined .person__name {
+    font-weight: 600;
+    color: #111827;                 /* темніший для контрасту */
+
+}
+
+.card--outlined .person__role{
+  color: #4b5563;
+}
+
+/* хвостик у бульбашки */
+.speech .card__quote::after{
+    content: "";
+    position:absolute;
+    left:56px;
+    bottom: -10px; /* виходить за бульбашку вниз */
+    width:22px;
+    height:22px;
+    background:var(--surface-dark);
+    transform:rotate(45deg);
+    border-bottom-left-radius:6px;
+}
+
+/* підпис під бульбашкою */
+.speech .person {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 12px 16px;
+  align-items: center;
+  margin-top: 36px;         /* відстань від бульбашки */
+}
+
+.card--dark {
+    background: var(--surface-dark);
+    color: #f1f5f9;
+}
+
+.card__quote {
+    margin: 0;
+    font-size: clamp(1rem, 1.1rem + .3vw, 1.25rem);
+}
+
+.card--split {
+    padding: 0;
+  overflow: hidden;
+  display: grid;
+  grid-template-columns: 1fr 1.2fr;  /* фото + контент */
+  border-radius: var(--radius-lg);
+}
+
+.split__avatar{
+  width: 100%;
+  height: фгещ;           /* <-- обери 240–320px за смаком */
+  object-fit: cover;       /* заповнює блок, але ріже краї */
+  object-position: 35% 30%;/* щоб не різало обличчя — підлаштуй */
+  border-radius: var(--radius-lg) 0 0 var(--radius-lg);
+}
+
+.split__content{
+    background: var(--surface-dark);
+    color: #f1f5f9;
+    padding: 24px 28px;      /* зменшив паддінги, щоб картка була тоншою */
+    display: grid;
+    gap: 12px;
+    align-content: center;   /* вертикально центруємо в межах висоти */
+    min-height: 280px;       /* <-- рівно як у .split__avatar.height */
+    border-radius: 0 var(--radius-lg) var(--radius-lg) 0;
+}
+
+/* зірки */
+.rating {
+    display: flex;
+    gap: 8px;
+}
+
+.star {
+    width: 28px;
+    height: 28px;
+    fill: #facc15;
+}
+
+/* ім'я/роль як у макеті */
+.person--stack {
+    grid-template-columns: 1fr;
+    gap: 4px;
+}
+
+.person__name--split {
+    font-size: clamp(1.5rem, 1.2rem + 1vw, 2rem);
+    font-weight: 600;
+}
+
+.card--split .person__role { 
+    color:#94a3b8; 
+}
+
+
+.card__quote--split {
+    margin: 0;
+    font-size: clamp(1rem, 1.05rem + .25vw, 1.25rem);
+}
+
+
+.person {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    gap: 12px 16px;
+    align-items: center;
+    margin-top: 16px;
+}
+
+.person__avatar {
+    border-radius: 999px;
+    width: 72px;
+    height: 72px;
+    object-fit: cover;
+    object-position: 50% 25%; /* зсув вище, щоб в центрі було обличчя */
+}
+
+.person__name{
+    font-weight:600;
+    color:var(--text);
+}
+
+.person__role {
+    color:var(--text);
+}
+
+
+/* темний фон тільки для "бульбашки" в першій картці */
+.speech {
+    background: transparent;  /* не фарбуємо всю картку */
+    box-shadow: none; /* тінь не потрібна навколо всього блоку */
+    padding: 0;
+
+}
+
+/* стилізуємо саме цитату як бульбашку */
+.speech .card__quote {
+    margin: 0;
+    background: var(--surface-dark);
+    color: #d6cbf5;
+    border-radius: 32px;
+    padding: 40px 50px;
+    width: 100%; /* керує довжиною рядка замість <br> */
+    position: relative;
+}
+
+.card--center {
+    text-align: center;
+    border-radius: var(--radius-lg);
+    padding: 40px;
+}
+
+.card--center .card__quote {
+    font-size: 1.2rem;
+    line-height: 1.6;
+    margin-bottom: 32px;
+}
+
+.carousel {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 16px;
+    margin-bottom: 20px;
+}
+
+.carousel__btn {
+    background: none;
+    border: none;
+    font-size: 2rem;
+    cursor: pointer;
+    color: #444;
+}
+
+.carousel__avatars {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.carousel__avatar {
+    width: 56px;
+    height: 56px;
+    border-radius: 50%;
+    object-fit: cover;
+    opacity: 0.5;
+    transition: all0.3s ease;
+}
+
+.carousel__avatar--active {
+    width: 72px;
+    height: 72px;
+    opacity: 1;
+    box-shadow: 0 0 0 3px var(--outline);
+}
+
+.person--center {
+    margin-top: 12px;
+}
+
+.person--center .person__name {
+    font-weight: 600;
+    font-size: 1rem;
+}
+
+.person--center {
+    display: flex;
+    justify-content: center; /* центрує по горизонталі */
+    margin-top: 10px;
+}
+
+
+
+
+/* stars, carousel і тд — додаси за аналогією */
+@media(min-width:1000px){
+  .card:nth-of-type(1){grid-column:span 6}
+  .card:nth-of-type(2){grid-column:span 6}
+  .card:nth-of-type(3){grid-column:span 12}
+  .card:nth-of-type(4){grid-column:span 12}
+}
+
+@media (max-width: 800px){
+  .card--split{ grid-template-columns: 1fr; }
+  .split__avatar{
+    height: 220px;
+    border-radius: var(--radius-lg) var(--radius-lg) 0 0;
+    object-position: center top;
+  }
+  .split__content{
+    min-height: auto;
+    border-radius: 0 0 var(--radius-lg) var(--radius-lg);
+    align-content: start;
+  }
+}

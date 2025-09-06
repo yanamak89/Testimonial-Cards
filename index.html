@@ -1,0 +1,112 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Testimonal Cards</title>
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="styles.css">
+    </head>
+    <body>
+        <main class="page">
+            <section class="grid">
+                <!-- Card 1: dark speech bubble -->
+                <figure class="card speech">
+                    <blockquote class="card__quote">
+                        <p>I have been solving all the project 
+                           ideas on roadmap.sh and I am 
+                           surprised how far I have come from 
+                           where I started.</p>
+                        <p><strong>Highly recomended!</strong></p>
+                    </blockquote>
+                    <figcaption class="person">
+                        <img class="person__avatar" src="avatars/ArtemJones.png" alt="Artem Jones">
+                        <div class="person__meta">
+                            <span class="person__name">Artem Jones</span>
+                            <br>
+                            <span class="person__role">Junior Frontend Developer</span>
+                        </div>
+                    </figcaption>
+                </figure>
+
+                <!-- Card 2: outlined light -->
+                <figure class="card card--outlined">
+                    <blockquote class="card__quote">
+                        <p>Since starting my career in 2018, 
+                           1 have only followed one resource, 
+                           roadmap.sh, it truly helped me go 
+                           from O to having a job and changing 
+                           the financial trajectory of my family.</p>
+                    </blockquote>
+                    <figcaption class="person">
+                        <img class="person__avatar" src="avatars/VitKacher.png" alt="Vit Kacher">
+                        <div class="person__meta">
+                            <span class="person__name">Vit Kacher</span>
+                            <br>
+                            <span class="person__role">Senior Frontend Developer</span>
+                        </div>
+                    </figcaption>
+                </figure>
+
+                <!-- Card 3: big dark with stars -->
+                <figure class="card card--split">
+                <img class="split__avatar"
+                    src="avatars/LiuseyRosman.png" alt="Liusey Rosman"/>
+                <div class="split__content">
+                    <div class="rating" aria-label="Rated five out of five">
+                        <svg viewBox="0 0 24 24" class="star" aria-hidden="true"><path d="M12 17.27 18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+                        <svg viewBox="0 0 24 24" class="star" aria-hidden="true"><path d="M12 17.27 18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+                        <svg viewBox="0 0 24 24" class="star" aria-hidden="true"><path d="M12 17.27 18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+                        <svg viewBox="0 0 24 24" class="star" aria-hidden="true"><path d="M12 17.27 18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+                        <svg viewBox="0 0 24 24" class="star" aria-hidden="true"><path d="M12 17.27 18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+                    </div>
+                
+                <figcaption class="person person--stack">
+                    <span class="person__name--split">Liusey Rosman</span>
+                    <br>
+                    <span class="person__role--split">Engineering Manager</span>
+                </figcaption>
+                <blockquote class="card__quote--split">
+                    <p>
+                        I find myself recommending roadmap.sh to all the internees or junior developers.
+                        It's a great way to skill up and grow in your career.
+                    </p>
+                </blockquote>
+                </div>
+                </figure>
+
+                <!-- Card 4: centered carousel style -->
+                <figure class="card card--outlined card--center">
+                    <blockquote class="card_quote">
+                        <p>
+                            roadmap.sh is an incredible resource. I was fortunate to discover it
+                            during my university days in 2018. Back then, it was just a single 
+                            repository with three images. It's amazing to see how much impact it 
+                            has had on millions of lives since then.
+                        </p>
+                    </blockquote>
+                    <div class="carousel">
+                        <button class="carousel__btn">&lt;</button>
+                        <div class="carousel__avatars">
+                            <img src="avatars/ArtemJones.png" alt="Prev avatar" class="carousel__avatar">
+                            <img src="avatars/ArtemJones.png" alt="Current avatar" class="carousel__avatar carousel__avatar--active">
+                            <img src="avatars/ArtemJones.png" alt="Next avatar" class="carousel__avatar">
+                        </div>
+                        <button class="carousel__btn">&gt;</button>
+                    </div>
+
+                    <figcaption class="person person--center">
+                        <span class="person__name">Artem Jones</span>
+                    </figcaption>
+                </figure>
+
+
+            </section>
+        </main>
+
+    </body>
+
+
+</html>
